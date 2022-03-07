@@ -1,39 +1,27 @@
-////DEPENDENCIES////
 require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
-const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const app = express();
-const Project =require('./models/project')
+const Project = require('./models/projects');
 
+//MVC SETUP
 
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine())
 
-///DATABASE CONNECTION////
-const DATABASE_URL = process.env.DATABASE_URL
-const CONFIG = {
+const PORT = 8001
+
+//MODELS
+
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-};
+    useUnifiedTopology: true,
+})
 
-mongoose.connect(DATABASE_URL, CONFIG);
-
-mongoose.connection
-    .on('open', () => console.log('connected to mongoose'))
-    .on('closed', () => console.log('diconnect from mongoose'))
-    .on('error', (error)=> console.log('Mongoose has left the bulding'))
-
-///MODELS///
-
-
-///APP OBJECT SETUP///
-
-
-
-///MIDDLEWARE///
+//MIDDLEWARE
 
 app.use(express.urlencoded({ extended: true }))
-app.use(morgan("tiny"));
 
 app.use((req, res, next) => {
     console.log(req.body)
@@ -42,29 +30,26 @@ app.use((req, res, next) => {
 
 app.use(methodOverride('_method'))
 
-///ROUTES///
-app
 //INDEX
-app.get('/project', (req, res) => {
-    Project.find({})
-        .then((projects) => {
-        res.render('projects/Index', {projects})
-        })
-        .catch((error) => {
-        res.status(400).json({error})
+
+app.get('/projects', (req, res) => {
+    Project.find({}, (err, foundProject) => {
+        if (err) {
+            res.status(400).send(err)
+        } else {
+            res.render('Index', {
+                projects: foundProject
+            })
+        }
     })
+});
+
+
+app.listen(PORT, () => {
+    console.log('coming to you live from 8001')
 })
+
 //NEW
-app.get('/project/new', (req, res) => {
-    res.render('project/New')
+app.get('/projects/new', (req, res) => {
+    res.render('New')
 })
-//UPDATE
-
-//CREATE
-
-//EDIT
-
-//SHOW
-
-const PORT =process.env.PORT
-app.listen(PORT, () => console.log(`Live form ${PORT}`))
