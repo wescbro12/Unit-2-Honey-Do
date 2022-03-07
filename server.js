@@ -45,11 +45,51 @@ app.get('/projects', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log('coming to you live from 8001')
-})
-
 //NEW
 app.get('/projects/new', (req, res) => {
     res.render('New')
+})
+
+//DELETE
+
+
+//UPDATE
+
+//CREATE
+app.post('/projects', (req, res) => {
+    if (req.body.tools === 'on') {
+        req.body.tools = true
+    } else {
+        req.body.tools = false
+    }
+
+    Project.create(req.body, (err, createdProject) => {
+        if (err) {
+            res.status(400).send(err)
+        } else {
+            res.redirect('/projects')
+        }
+    })
+
+})
+//EDIT
+
+//SHOW
+app.get('/projects/:id', (req, res) => {
+    Project.findById(req.params.id, (err, foundProject) => {
+        if (err) {
+            res.status(400).send(err)
+        } else {
+            res.render('Show', {
+                projects: foundProject
+            })
+        }
+    })
+})
+
+
+
+
+app.listen(PORT, () => {
+    console.log('coming to you live from 8001')
 })
