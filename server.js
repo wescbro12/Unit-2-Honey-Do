@@ -51,7 +51,15 @@ app.get('/projects/new', (req, res) => {
 })
 
 //DELETE
-
+app.delete('/projects/:id', (req, res) => {
+    Project.findByIdAndDelete(req.params.id, (err, deletedProject) => {
+        if (!err) {
+            res.redirect('/projects')
+        } else {
+            res.status(400).send(err)
+        }
+    })
+})
 
 //UPDATE
 app.put('/projects/:id', (req, res) => {

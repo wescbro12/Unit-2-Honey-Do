@@ -13,6 +13,9 @@ class Show extends React.Component {
                 <p>Project Description: {projects.entry}</p>
                 <p>Tools needed: {projects.tools ? 'Yes I need this tool' : 'No this tool is not needed'}</p>
                 <a href={`/projects/${projects._id}/edit`}> Edit your project</a>
+                <form action={`/projects/${projects._id}?_method=DELETE`} method="POST">
+                    <input type="submit" value="Delete this project" />
+                </form>
             </div>
         )
     }
