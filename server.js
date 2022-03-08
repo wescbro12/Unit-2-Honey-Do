@@ -54,6 +54,20 @@ app.get('/projects/new', (req, res) => {
 
 
 //UPDATE
+app.put('/projects/:id', (req, res) => {
+    if (req.body.tools === 'on') {
+        req.body.tools = true
+    } else {
+        req.body.tools = false
+    }
+    Project.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedProject) => {
+        if (err) {
+            res.status(400).send(err)
+        } else {
+            res.redirect(`/projects/${req.params.id}`)
+        }
+    })
+})
 
 //CREATE
 app.post('/projects', (req, res) => {
@@ -73,7 +87,17 @@ app.post('/projects', (req, res) => {
 
 })
 //EDIT
-
+app.get('/projects/:id/edit', (req, res) => {
+    Project.findById(req.params.id, (err, foundProject) => {
+        if (err) {
+            res.status(400).send(err)
+        } else {
+            res.render('Edit', {
+                projects: foundProject
+            })
+        }
+    })
+})
 //SHOW
 app.get('/projects/:id', (req, res) => {
     Project.findById(req.params.id, (err, foundProject) => {
