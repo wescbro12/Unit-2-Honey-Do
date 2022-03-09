@@ -10,7 +10,7 @@ class New extends React.Component {
                 </nav>
                 <form action="/projects" method="POST">
                     Project Name:<br /><input name="title" type="text" /><br />
-                    Project Description:<br /><textarea name="entry" autoCorrect='on' />
+                    Project Description:<br />                                <textarea name="entry" autoCorrect='on' />
                     <hr></hr>
                     <h2>TOOLS</h2><br />
                     <ul>
