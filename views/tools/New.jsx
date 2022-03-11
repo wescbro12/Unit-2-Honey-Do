@@ -5,22 +5,21 @@ class New extends React.Component {
     render() {
         return (
             <div>
+                <h1>Tools Page</h1>
                 <nav>
                     <a href='/projects'>Return to Project Directory</a>
                 </nav>
-                <form action="/projects" method="POST">
-                    Project Name:<br /><input name="title" type="text" /><br />
-                    Project Description:<br />                                <textarea name="entry" autoCorrect='on' />
-                    <hr></hr>
-                    <h2>TOOLS</h2><br />
-                    <ul>
+                <form action="/tools" method="POST">
+                    <p> Please enter the tools needed for this project</p>
+                    <input name="name" /><br />
+                    {/* <ul>
                         <li>Hammer<input name="tools" type="checkbox" /></li>
                         <li>Saw<input name="tools" type="checkbox" /></li>
                         <li>Drill<input name="tools" type="checkbox" /></li>
                         <li>Screwdriver<input name="tools" type="checkbox" /></li>
                         <li>Measuring Tape<input name="tools" type="checkbox" /></li>
-                    </ul>
-                    <input type="submit" value="Create new project" />
+                    </ul> */}
+                    <input type="submit" value="Add Tools to Your Project" />
                 </form>
             </div>
         )

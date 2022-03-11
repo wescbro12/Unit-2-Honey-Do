@@ -3,21 +3,23 @@ const React = require('react');
 
 class Index extends React.Component {
     render() {
-        const projects = this.props.projects
+        const tools = this.props.tools
         return (
             // <Default title="Captain's project Directory">
             <div>
                 {/* <h1> Captain's project INDEX</h1> */}
                 <nav>
-                    <a href='/projects/new'>Create a new project</a>
+                    <a href='/tools/new'>Add a Tool to the Directory</a>
                 </nav>
                 <ul>
-                    {projects.map((project) => {
+                    {tools.map((tool) => {
                         return (
-                            <li key={`${project._id}`}>
-                                <a href={`/projects/${project._id}`}>{project.title.charAt(0).toUpperCase() + project.title.substr(1).toLowerCase()}</a>
-                                {/* {`${project.title}`} */}
+                            <li key={`${tool._id}`}>
+                                <a href={`/tools/${tool._id}`}>{tool.name.charAt(0).toUpperCase() + tool.name.substr(1).toLowerCase()}</a>
+                                {/* <a href='/tools/show'><br /><button>Delete</button></a> */}
 
+                                {/* {`${project.title}`} */}
+                                {/* {project.title.charAt(0).toUpperCase() + project.title.substr(1).toLowerCase()} */}
 
                                 {/* <form action={`/projects/${project._id}?_method=Delete`} method="POST">
 
@@ -29,6 +31,8 @@ class Index extends React.Component {
                     })
                     }
                 </ul>
+
+                <a href="/projects">Go to the Project Directory</a>
 
             </div>
             // </Default>
