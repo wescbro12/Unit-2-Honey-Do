@@ -1,38 +1,62 @@
 const React = require('react');
-// const Default = require('../Default.jsx')
+const Default = require('../layout/Default.jsx')
 
 class Index extends React.Component {
     render() {
         const projects = this.props.projects
         return (
-            // <Default title="">
-            <div>
-                {/* <h1> Captain's project INDEX</h1> */}
-                <nav>
-                    <a href='/projects/new'>Create a new project</a>
-                </nav>
-                <ul>
-                    {projects.map((project) => {
-                        return (
-                            <li key={`${project._id}`}>
-                                <a href={`/projects/${project._id}`}>{project.title}</a>
-                                {/* {`${project.title}`} */}
-                                {/* {project.title.charAt(0).toUpperCase() + project.title.substr(1).toLowerCase()} */}
+            <Default title="Project Directory">
+                <div>
+                    {/* <h1> Captain's project INDEX</h1> */}
+                    <nav></nav>
+                    <a href='/projects/new'><h2>Create a new project</h2></a>
+                    <ul className="list-unstyled list-inline">
+                        {projects.map((project) => {
+                            return (
+                                <li className="list-inline-item">
+                                    <div key={`${project._id}`} className="row row-cols-1 row-cols-md-3">
+                                        <div className="col mb-4">
+                                            <div className="card" style={{ width: 15 + "em" }}>
+                                                <img src="https://i.pinimg.com/originals/f8/4b/8c/f84b8ca92442540bc2e36b357a4fc4c0.png" className="card-img-top" style={{ height: 10 + "em" }} />
+                                                <div className="card-body" >
+                                                    <h5 className="card-title">{project.title}</h5>
+                                                    <p className="card-text">Brief description of project</p>
+                                                    <a href={`/projects/${project._id}`} className="btn btn-primary">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
 
-                                {/* <form action={`/projects/${project._id}?_method=Delete`} method="POST">
+                            )
+                        })}
+                    </ul>
 
-                                        <input type="submit" value={`Delete ${project.title}`} />
-                                    </form> */}
 
-                            </li>
-                        )
-                    })
-                    }
-                </ul>
-                <a href='/tools'> Go to Tools Directory</a>
+                    {/* 
+                    
+                    
+                    <ul>
+                        {projects.map((project) => {
+                            return (
+                                <li key={`${project._id}`}>
+                                    <a href={`/projects/${project._id}`}>{project.title}</a>
 
-            </div>
-            // </Default>
+
+                                </li>
+                            )
+
+                        })
+                    }     
+                    
+                    </ul> */}
+
+
+                    <a href='/tools'> <h3>Go to Tools Directory</h3></a>
+                    {/* <a className='home' href='/'>HOME</a> */}
+
+                </div>
+            </Default>
         )
     }
 }

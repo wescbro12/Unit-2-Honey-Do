@@ -17,6 +17,7 @@ class Show extends React.Component {
 
                 </form>
                 <a href="/projects"><button>Add to Project</button></a>
+                <a className='home' href='/'>HOME</a>
 
             </div>
         )

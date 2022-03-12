@@ -12,6 +12,7 @@ class Edit extends React.Component {
                     <input name="name" />
                     <input type="submit" value="Update Tools List" />
                 </form>
+                <a className='home' href='/'>HOME</a>
 
             </div>
         )

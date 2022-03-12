@@ -33,6 +33,7 @@ class Index extends React.Component {
                 </ul>
 
                 <a href="/projects">Go to the Project Directory</a>
+                <a className='home' href='/'>HOME</a>
 
             </div>
             // </Default>

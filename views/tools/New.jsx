@@ -21,6 +21,8 @@ class New extends React.Component {
                     </ul> */}
                     <input type="submit" value="Add Tools to Your Project" />
                 </form>
+                <a className='home' href='/'>HOME</a>
+               
             </div>
         )
     }

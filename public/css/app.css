@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Righteous&family=Wire+One&display=swap');
+
+body {
+    /* background: url(https://www.kindpng.com/picc/m/58-581141_beehive-honeycomb-honey-bee-computer-icons-clip-art.png); */
+    background: url(https://media.istockphoto.com/illustrations/seamless-background-honeycomb-border-yellow-honeycomb-watercolor-hand-illustration-id1266797638?k=20&m=1266797638&s=612x612&w=0&h=lCvAc4KcFOr1lu56Bg2cSba313X09h4t4ttrehIm06M=);
+    background-repeat:no-repeat;
+    /* background:fixed; */
+    background-size: cover;
+    /* background-color: rgb(7, 167, 145); */
+    font-family: 'Righteous', cursive;
+    font-size: 18px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    /* text-align: center; */
+    right: 0;
+    /* left: 0; */
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    text-align: center;
+    color: rgb(48, 41, 3);
+    /* font-size: xx-large; */
+}
+h2 {
+    font-family: 'Wire One', sans-serif;
+    text-align: left;
+    color: rgb(14, 11, 1);
+}
+
+h3 {
+   font-family: 'Monoton', cursive;
+    text-align: left;
+    color: rgb(15, 14, 1);
+}
+
+a {
+    color:rgb(95, 82, 6);
+    font-size: large;
+   
+}
+
+p {
+    font-family: 'Righteous', cursive;
+    text-align: left;
+    color: rgb(48, 41, 3);
+    /* font-size: 30px; */
+}
+
+textarea {
+    width:445px;
+    height: 193px;
+    background-color: rgba(206, 206, 46, 0.308);
+}
+
+input[type=text] {
+    background-color: rgba(206, 206, 46, 0.308);
+    padding: .3em
+}
+.home {
+    font-family: 'wire One', sans-serif;
+    position: fixed;
+    top:0;
+    font-size: 40px;
+}
+
+.login {
+    font-family: 'wire One', sans-serif;
+    position: fixed;
+    top:0;
+    right:0;
+    padding-right: .3em;
+    font-size: 40px;
+}
+
+.directory {
+    text-align: center;
+    top:0;
+}
+
+.card-body {
+    background-color: rgba(250, 237, 53, 0.185);
+}

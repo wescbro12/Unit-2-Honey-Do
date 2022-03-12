@@ -5,12 +5,14 @@ const methodOverride = require('method-override');
 const app = express();
 const Project = require('./models/projects');
 const Tool = require('./models/tools');
-const { redirect } = require('express/lib/response');
+
 
 //MVC SETUP
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine())
+
+app.use(express.static('public'));
 
 const PORT = 8001
 
@@ -31,6 +33,8 @@ app.use((req, res, next) => {
 })
 
 app.use(methodOverride('_method'))
+
+
 //HOME
 app.get('/', (req, res) => {
     // res.send("welcome to the Landing page")
