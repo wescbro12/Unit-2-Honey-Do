@@ -11,19 +11,25 @@ class Show extends React.Component {
                 <div>
                     {/* <h2>{projects.title.toUpperCase()}</h2> */}
                     <nav>
-                        
                     </nav>
-                    <p>Project Description:</p> {projects.entry}
+                    <a><h2 className="back">BACK</h2></a>
+                    <p>Project Description:</p> <textarea className="displaytext">{projects.entry}</textarea>
                     <p>Tools needed for this project:<br /></p>
+                    <ul>
+                        <li>Hammer</li>
+                        <li>Nails</li>
+                        <li>Table Saw</li>
+                    </ul>
                     {/* <p>Tools needed: {projects.tools ? 'Yes I need this tool' : 'No this tool is not needed'}</p> */}
-                    <a href={`/projects/${projects._id}/edit`}> Edit your project</a><br />
-                   
-                    <a href='/projects'><h3>Return to Project Directory</h3></a>
+                    <br /><a href={`/projects/${projects._id}/edit`}> Edit your project</a><br />
+
 
                     <form action={`/projects/${projects._id}?_method=DELETE`} method="POST">
                         <br /><input type="submit" value="Delete this project" />
-                    </form>
-                    <a className='home' href='/'>HOME</a>
+                    </form><br />
+
+                  <br /><a href='/projects'><h3>Return to Project Directory</h3></a>
+
                 </div>
             </Default>
         )

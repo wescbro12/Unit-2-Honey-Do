@@ -2,6 +2,9 @@ const React = require('react');
 
 class Defaultlayout extends React.Component {
     render() {
+        // const goBack = () => {
+        //     this.props.history.goBack()
+        // }
         return (
             <html>
                 <head>
@@ -44,6 +47,7 @@ class Defaultlayout extends React.Component {
                         </li>
 
                     </ul>
+                    
 
                     {this.props.children}
 

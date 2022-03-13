@@ -1,8 +1,10 @@
 const React = require('react');
+const Default = require('../layout/Default.jsx')
 
 class Edit extends React.Component {
     render() {
         return (
+            <Default title="Edit your tool selection">
             <div>
                 <h1> Edit your tool selection </h1>
                 <form action={`/tools/${this.props.tools._id}?_method=PUT`} method="POST">
@@ -14,7 +16,8 @@ class Edit extends React.Component {
                 </form>
                 <a className='home' href='/'>HOME</a>
 
-            </div>
+                </div>
+            </Default>
         )
     }
 }

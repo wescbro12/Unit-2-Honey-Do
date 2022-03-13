@@ -5,12 +5,13 @@ class Home extends React.Component {
     render() {
         return (
             <Default title="Honey Do">
-                <div>
-               
-                    {/* <h2><a className='directory' href='/projects/new'>Create a new Project</a></h2>
-                    
-                    <h2><a className='directory' href='/projects'>Project Directory</a></h2> */}
+                <div>                                
                     <a className='login' href='/'>LOG IN</a>
+                    <p className='landing'>WELOME!<br />
+                        This app is a way to keep track of all of your DIY projects.
+                        
+                        
+                    </p>
                 </div>
             </Default>
         )

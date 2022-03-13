@@ -8,7 +8,8 @@ class Index extends React.Component {
             <Default title="Project Directory">
                 <div>
                     {/* <h1> Captain's project INDEX</h1> */}
-                    <nav></nav>
+                    <nav></nav >
+                    <a><h2 className="back">BACK</h2></a>
                     <a href='/projects/new'><h2>Create a new project</h2></a>
                     <ul className="list-unstyled list-inline">
                         {projects.map((project) => {
