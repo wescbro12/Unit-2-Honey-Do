@@ -14,7 +14,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use(express.static('public'));
 
-const PORT = 8001
+
 
 //MODELS
 
