@@ -18,7 +18,7 @@ class Index extends React.Component {
                                     <div key={`${project._id}`} className="row row-cols-1 row-cols-md-3">
                                         <div className="col mb-4">
                                             <div className="card" style={{ width: 15 + "em" }}>
-                                                <img src="https://i.pinimg.com/originals/f8/4b/8c/f84b8ca92442540bc2e36b357a4fc4c0.png" className="card-img-top" style={{ height: 10 + "em" }} />
+                                                <img src={require('/image/hd.png')} className="card-img-top" style={{ height: 10 + "em" }} />
                                                 <div className="card-body" >
                                                     <h5 className="card-title">{project.title}</h5>
                                                     <p className="card-text">Brief description of project</p>
